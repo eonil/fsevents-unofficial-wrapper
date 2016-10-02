@@ -8,9 +8,20 @@ many boilerplate works and subtle conversions.
 This library provides mostly faithful wrapper around FSEvents feature tailored
 for Swift 3.
 
+
+
 Quickstart
 ----------
 
+Start.
+
+    try FileSystemWatch.start(for: ObjectIdentifier(self), paths: ["/"]) { event in
+        print(event)
+    }
+
+Stop.
+
+    FileSystemWatch.stop(for: ObjectIdentifier(self))
 
 
 
@@ -36,3 +47,7 @@ As soon as the last strong reference removed, the stream will be destroyed.
 
 
 
+
+License
+-------
+MIT license.
