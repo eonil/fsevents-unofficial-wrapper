@@ -1,17 +1,22 @@
 import XCTest
-@testable import FSEventStreamWrapper
+@testable import EonilFSEventStreamWrapper
 
 class FSEventStreamWrapperTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(FSEventStreamWrapper().text, "Hello, World!")
-    }
 
+    func testWatchingSystemRoot() throws {
+        let exp = expectation(description: #function)
+        try FileSystemWatch.start(for: ObjectIdentifier(self), paths: ["/"]) { event in
+            print(event)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 10) { (err: Error?) in
+            FileSystemWatch.stop(for: ObjectIdentifier(self))
+        }
+    }
 
     static var allTests : [(String, (FSEventStreamWrapperTests) -> () throws -> Void)] {
         return [
-            ("testExample", testExample),
+            ("testWatchingSystemRoot", testWatchingSystemRoot),
         ]
     }
 }
