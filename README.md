@@ -2,7 +2,7 @@ FSEventsUnofficialWrapper
 =============================
 Hoon H.
 
-[![Build Status](https://travis-ci.org/eonil/fsevents-unofficial-wrapper.swift.svg?branch=master)](https://travis-ci.org/eonil/fsevents-unofficial-wrapper.swift)
+[![Build Status](https://api.travis-ci.org/eonil/fsevents-unofficial-wrapper.svg)](https://travis-ci.org/eonil/fsevents-unofficial-wrapper)
 
 It's possible to use FSEvents directly in Swift 3, but it still involves
 many boilerplate works and subtle conversions.
