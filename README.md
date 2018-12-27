@@ -1,3 +1,11 @@
+ARCHIVED!
+=========
+This repository has been replaced by a new repository: https://github.com/eonil/FSEvents
+
+----
+
+
+
 FSEventsUnofficialWrapper
 =============================
 Hoon H.
